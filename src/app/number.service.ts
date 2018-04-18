@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class NumberService {
   alphaArray : Array<number> = [];
   betaArray : Array<number> = [];
-  differnce : number = 0;
+  differnce : number;
   reducerA = (accumulator, currentValue) => accumulator + currentValue;
   reducerB = (accumulator, currentValue) => accumulator + currentValue;
 
@@ -18,6 +19,10 @@ export class NumberService {
     return this.betaArray;
   }
 
+  retrieveDifference():number{
+    return this.differnce;
+  }
+
   //push alpha number to alphaArray
   addNumberToAlpha(num:number){
     this.alphaArray.push(num);
@@ -28,8 +33,11 @@ export class NumberService {
     this.betaArray.push(num);
   }
 
+  
+
   getArrayDifference(): number{
     console.log(`getArrayDiffernce in Service`);
+    
     if (this.alphaArray.length>0 && this.betaArray.length > 0){
       this.differnce = this.alphaArray.reduce(this.reducerA) - 
       this.betaArray.reduce(this.reducerB);

@@ -7,16 +7,17 @@ import { NumberService } from '../number.service';
 })
 export class GammaComponent implements OnInit {
   myDiffernce : number;
+  reassignDiff:number;
   constructor(private _numberService : NumberService) { }
 
   //initialize your local var on initialization
   ngOnInit() {
     //this.myDiffernce = this._numberService.differnce;
-    this.myDiffernce = this._numberService.getArrayDifference();
+    this.myDiffernce = this._numberService.retrieveDifference();
   }
 
   getDifference(){
-    this._numberService.getArrayDifference();
+    this.reassignDiff=this._numberService.getArrayDifference();
   }
 
 }

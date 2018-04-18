@@ -8,6 +8,7 @@ import { BetaComponent } from './beta/beta.component';
 
 import { NumberService } from './number.service';
 import { GammaComponent } from './gamma/gamma.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({

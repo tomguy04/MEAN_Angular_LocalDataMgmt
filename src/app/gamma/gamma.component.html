@@ -2,5 +2,6 @@
   gamma works!
 </p>
 <button (click)='getDifference()'>get the array difference</button>
-{{myDiffernce|json}}
-{{myDiffernce}}
+<ul>
+  <li *ngIf='reassignDiff'>{{reassignDiff}}</li>
+</ul>
